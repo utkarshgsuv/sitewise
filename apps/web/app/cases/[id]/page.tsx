@@ -27,8 +27,6 @@ export default function CasePage({ params }: { params: { id: string } }) {
   if (!data) return <div className="flex h-64 items-center justify-center text-muted-foreground">Loading…</div>;
   const { case: c, findings, attempts, docs, task, draft } = data as { case: any; findings: Finding[]; attempts: any[]; docs: any[]; task: any; draft: any };
   const blocked = attempts.filter((a) => a.verdict === "BLOCK");
-  const high = findings.filter((f) => f.severity === "high").length;
-  const med = findings.filter((f) => f.severity === "medium").length;
 
   return (
     <div className="space-y-6">
@@ -39,9 +37,9 @@ export default function CasePage({ params }: { params: { id: string } }) {
       </div>
 
       <Tabs value={tab} onValueChange={setTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-6">
+        <TabsList className="h-11 w-fit rounded-full p-1">
           {TABS.map((t) => (
-            <TabsTrigger key={t} value={t}>{t}</TabsTrigger>
+            <TabsTrigger key={t} value={t} className="rounded-full px-5 data-[state=active]:bg-[#181b2e] data-[state=active]:text-white">{t}</TabsTrigger>
           ))}
         </TabsList>
 
@@ -71,9 +69,10 @@ export default function CasePage({ params }: { params: { id: string } }) {
               </CardHeader>
               <CardContent>
                 <div className="text-3xl font-bold">{findings.length}</div>
-                <div className="flex gap-2 mt-1">
-                  <span className={`h-2 flex-1 rounded-full ${high ? "bg-destructive" : "bg-muted"}`} />
-                  <span className={`h-2 flex-1 rounded-full ${med ? "bg-amber-500" : "bg-muted"}`} />
+                <div className="flex gap-1.5 mt-2">
+                  {findings.map((f) => (
+                    <span key={f.id} className={`h-2 flex-1 rounded-full ${f.severity === "high" ? "bg-primary" : f.severity === "medium" ? "bg-primary/40" : "bg-muted"}`} />
+                  ))}
                 </div>
               </CardContent>
             </Card>

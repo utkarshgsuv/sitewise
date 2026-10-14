@@ -36,12 +36,12 @@ export default function SiteHeader() {
       <nav className="flex-1 flex justify-center">
         <div className="flex items-center gap-1 rounded-full bg-secondary p-1">
           <Link href="/cases" className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-            path.startsWith("/cases") ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+            path.startsWith("/cases") ? "bg-[#181b2e] text-white" : "text-muted-foreground hover:text-foreground"
           }`}>
             Cases
           </Link>
           <Link href="/login" className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-            path.startsWith("/login") ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+            path.startsWith("/login") ? "bg-[#181b2e] text-white" : "text-muted-foreground hover:text-foreground"
           }`}>
             Login
           </Link>
