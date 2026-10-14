@@ -18,8 +18,10 @@ export default function CasePage({ params }: { params: { id: string } }) {
   const { case: c, findings, attempts, docs, task, draft } = data as any;
   return (
     <div>
-      <h2>{c.invoice_number} — {c.total}</h2>
-      <p>{c.vendor} · status {c.status}</p>
+      <div className="page-head">
+        <h2>{c.invoice_number} <span style={{ color: "var(--muted)", fontWeight: 500 }}>— {c.total}</span></h2>
+        <p className="meta">{c.vendor} · status {c.status}</p>
+      </div>
       <div className="tabs">
         {TABS.map((t) => (
           <button key={t} className={tab === t ? "active" : ""} onClick={() => setTab(t)}>{t}</button>
@@ -28,10 +30,12 @@ export default function CasePage({ params }: { params: { id: string } }) {
 
       {tab === "Overview" && (
         <div>
-          <div className="card"><b>Task:</b> {task.title} → {task.assignee} ({task.status})</div>
-          <div className="card"><b>Draft:</b> {draft.subject} → {draft.recipient} (digest {draft.digest})</div>
-          <h3>Run timeline</h3>
-          <RunTimeline />
+          <div className="grid2">
+            <div className="card"><b>Review task</b><p className="meta">{task.title} → {task.assignee} ({task.status})</p></div>
+            <div className="card"><b>Vendor draft</b><p className="meta">{draft.subject} → {draft.recipient} (digest {draft.digest})</p></div>
+          </div>
+          <h3 className="section">Run timeline</h3>
+          <div className="card"><RunTimeline /></div>
         </div>
       )}
 

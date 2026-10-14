@@ -16,7 +16,7 @@ export default function CasesPage() {
     <div>
       <h2>Cases</h2>
       {cases.map((c) => (
-        <div className="card" key={c.id}>
+        <div className="card case" key={c.id}>
           <a href={`/cases/${c.id}`}><b>{c.invoice_number}</b></a>
           <p>{c.vendor} · {c.total} · {c.status}</p>
         </div>
