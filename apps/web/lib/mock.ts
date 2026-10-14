@@ -22,6 +22,8 @@ export type Finding = {
   evidence: Evidence[];
 };
 
+export type FindingDetail = Record<string, string>;
+
 export type Attempt = {
   attempt_id: string;
   tool: string;
