@@ -1,0 +1,19 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.uv/
+node_modules/
+.next/
+next-env.d.ts
+out/
+dist/
+*.log
+.DS_Store
+# seed PDFs are generated, keep fixtures dir but ignore local outputs
+db/seed/fixtures/*.pdf
+!db/seed/fixtures/.gitkeep
+# evidence holds real run outputs, keep dir
+docs/evidence/*
+!docs/evidence/.gitkeep

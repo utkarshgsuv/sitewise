@@ -1,0 +1,24 @@
+[project]
+name = "sitewise"
+version = "0.1.0"
+description = "Sitewise - Governed AI Procurement & Finance Operations Agent (ArmorIQ Flow State 2026)"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["packages/contracts", "apps/api", "apps/mcp"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sitewise"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
