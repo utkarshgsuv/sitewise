@@ -14,7 +14,13 @@ logs:
 	docker compose logs -f
 
 migrate:
-	@echo "TODO D-02: alembic upgrade head + security SQL (Person B schema, Person A security)"
+	alembic -c db/migrations/alembic.ini upgrade head
+
+migrate-sql:
+	alembic -c db/migrations/alembic.ini upgrade head --sql
+
+fixtures:
+	uv run python db/seed/generate_fixtures.py
 
 seed:
 	@echo "TODO S-02: uv run python -m db.seed.seed_demo (Person B)"
