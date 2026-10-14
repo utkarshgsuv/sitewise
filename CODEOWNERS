@@ -1,0 +1,22 @@
+# Directory = owner (see team_distribution.md §2). Owner reviews every PR on their paths.
+packages/contracts/** @utkarshgsuv @tanmaysachann
+apps/mcp/** @utkarshgsuv
+apps/api/gateway/** @utkarshgsuv
+apps/api/agents/** @utkarshgsuv
+db/security/** @utkarshgsuv
+policies/** @utkarshgsuv
+tests/security/** @utkarshgsuv
+tests/redteam/** @utkarshgsuv
+apps/api/engine/** @tanmaysachann
+apps/api/ingest/** @tanmaysachann
+apps/api/routes/** @tanmaysachann
+apps/api/auth/** @tanmaysachann
+apps/api/services/** @tanmaysachann
+apps/api/db/** @tanmaysachann
+db/migrations/** @tanmaysachann
+db/seed/** @tanmaysachann
+apps/web/** @tanmaysachann
+README.md @tanmaysachann
+docs/** @tanmaysachann
+docker-compose.yml @tanmaysachann
+Makefile @tanmaysachann

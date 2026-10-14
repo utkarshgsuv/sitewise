@@ -1,0 +1,16 @@
+[project]
+name = "sitewise-contracts"
+version = "0.1.0"
+description = "Shared contracts: tool IO, events, enums, envelope, digest (frozen v0 needs both reviewers)"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.7", "pyjwt>=2.8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sitewise_contracts"]
+
+[tool.mypy]
+strict = true

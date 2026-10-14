@@ -1,0 +1,17 @@
+[project]
+name = "sitewise-mcp"
+version = "0.1.0"
+description = "Sitewise FastMCP tool server (Person A). M0 hello, full tools in M-01..M-07."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "pydantic>=2.7",
+    "sitewise-contracts",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sitewise_mcp"]
+
+[tool.uv.sources]
+sitewise-contracts = { workspace = true }
