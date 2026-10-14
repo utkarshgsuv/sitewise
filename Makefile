@@ -23,10 +23,10 @@ fixtures:
 	uv run python db/seed/generate_fixtures.py
 
 seed:
-	@echo "TODO S-02: uv run python -m db.seed.seed_demo (Person B)"
+	uv run python db/seed/seed_demo.py
 
 reset:
-	@echo "TODO D-06: truncate + reseed + baseline checksum, target <60s"
+	@echo "TODO D-06: branch-reset path + reseed + baseline checksum, target <60s (Fri)"
 
 test:
 	uv run pytest -q
